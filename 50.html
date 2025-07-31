@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Pagamento via Pix - R$50,00</title>
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .container {
+      display: flex;
+      background: #121212;
+      border-radius: 10px;
+      padding: 40px;
+      gap: 40px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.7);
+    }
+    .left, .right {
+      display: flex;
+      flex-direction: column;
+    }
+    .title {
+      font-size: 24px;
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+    .details {
+      background: #1e1e1e;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .details div {
+      margin-bottom: 10px;
+    }
+    .qr {
+      margin-bottom: 20px;
+    }
+    button {
+      background-color: #00ff88;
+      border: none;
+      padding: 15px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background-color: #00cc6e;
+    }
+    .footer {
+      margin-top: 40px;
+      font-size: 12px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="left">
+      <div class="title">Transfira para Maykon Duarte Correa</div>
+      <div class="details">
+        <div><strong>Nome:</strong> Maykon Duarte Correa</div>
+        <div><strong>CPF:</strong> ***.604.441-**</div>
+        <div><strong>Valor:</strong> R$ 50,00</div>
+        <div><strong>Localidade:</strong> Balneário Camboriú</div>
+      </div>
+    </div>
+
+    <div class="right">
+      <div class="qr">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?data=00020126460014BR.GOV.BCB.PIX0124liberdade2anos@gmail.com520400005303986540550.005802BR5920MAYKON DUARTE CORREA6015BALNEARIO CAMBO62070503***63048A14&size=200x200" alt="QR Code Pix">
+      </div>
+      <button onclick="copiarPix()">📋 Copiar Código de Cobrança</button>
+    </div>
+  </div>
+
+  <div class="footer">Powered by Maykon</div>
+
+  <script>
+    function copiarPix() {
+      const codigo = `00020126460014BR.GOV.BCB.PIX0124liberdade2anos@gmail.com520400005303986540550.005802BR5920MAYKON DUARTE CORREA6015BALNEARIO CAMBO62070503***63048A14`;
+      navigator.clipboard.writeText(codigo).then(() => {
+        alert("Código Pix copiado para a área de transferência!");
+      });
+    }
+  </script>
+</body>
+</html>
