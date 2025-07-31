@@ -16,33 +16,40 @@
       margin: 0;
     }
     .container {
-      display: flex;
       background: #121212;
       border-radius: 10px;
       padding: 40px;
-      gap: 40px;
       box-shadow: 0 0 10px rgba(0,0,0,0.7);
-    }
-    .left, .right {
       display: flex;
       flex-direction: column;
+      align-items: center;
     }
-    .title {
-      font-size: 24px;
+    h1 {
+      font-size: 22px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    h2 {
+      font-size: 18px;
+      text-align: center;
       margin-bottom: 20px;
-      font-weight: bold;
+      font-weight: normal;
     }
     .details {
       background: #1e1e1e;
       border-radius: 10px;
       padding: 20px;
       margin-bottom: 20px;
+      width: 100%;
+      max-width: 400px;
     }
     .details div {
       margin-bottom: 10px;
     }
-    .qr {
-      margin-bottom: 20px;
+    .right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     button {
       background-color: #00ff88;
@@ -52,6 +59,9 @@
       border-radius: 5px;
       cursor: pointer;
       font-weight: bold;
+      width: 100%;
+      max-width: 240px;
+      margin-top: 15px;
     }
     button:hover {
       background-color: #00cc6e;
@@ -61,24 +71,27 @@
       font-size: 12px;
       color: #777;
     }
+    .qr img {
+      border: 4px solid #fff;
+      border-radius: 8px;
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <div class="left">
-      <div class="title">Efetue o pagamento para o Jantar Especial do Grupo Liberdade BC</div>
-      <div class="title">1 Convite - R$30,00</div>
-      <div class="details">
-        <div><strong>Nome:</strong> Maykon Duarte Correa</div>
-        <div><strong>CPF:</strong> ***.604.441-**</div>
-        <div><strong>Valor:</strong> R$ 30,00</div>
-        <div><strong>Localidade:</strong> Balneário Camboriú</div>
-      </div>
+    <h1>Efetue o pagamento para o Jantar Especial do Grupo Liberdade BC</h1>
+    <h2>1 Convite - R$30,00</h2>
+
+    <div class="details">
+      <div><strong>Nome:</strong> Maykon Duarte Correa</div>
+      <div><strong>CPF:</strong> ***.604.441-**</div>
+      <div><strong>Valor:</strong> R$ 30,00</div>
+      <div><strong>Localidade:</strong> Balneário Camboriú</div>
     </div>
 
     <div class="right">
       <div class="qr">
-        <img src="https://api.qrserver.com/v1/create-qr-code/?data=00020126460014BR.GOV.BCB.PIX0124liberdade2anos@gmail.com520400005303986540530.005802BR5920MAYKON DUARTE CORREA6015BALNEARIO CAMBO62070503***6304DA63&size=200x200" alt="QR Code Pix">
+        <img src="https://api.qrserver.com/v1/create-qr-code/?data=00020126460014BR.GOV.BCB.PIX0124liberdade2anos@gmail.com520400005303986540530.005802BR5920MAYKON DUARTE CORREA6015BALNEARIO CAMBO622105171ConviteLiberdade630431CD&size=200x200" alt="QR Code Pix">
       </div>
       <button onclick="copiarPix()">📋 Copiar Código de Cobrança</button>
     </div>
@@ -88,7 +101,7 @@
 
   <script>
     function copiarPix() {
-      const codigo = `00020126460014BR.GOV.BCB.PIX0124liberdade2anos@gmail.com520400005303986540530.005802BR5920MAYKON DUARTE CORREA6015BALNEARIO CAMBO62070503***6304DA63`;
+      const codigo = `00020126460014BR.GOV.BCB.PIX0124liberdade2anos@gmail.com520400005303986540530.005802BR5920MAYKON DUARTE CORREA6015BALNEARIO CAMBO622105171ConviteLiberdade630431CD`;
       navigator.clipboard.writeText(codigo).then(() => {
         alert("Código Pix copiado para a área de transferência!");
       });
